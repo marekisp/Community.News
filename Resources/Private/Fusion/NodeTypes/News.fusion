@@ -22,6 +22,8 @@ prototype(Community.News:News) {
 //            collection = ${q(node).property('related')}
 //        }
 //    }
+
+    @process.editableWrap = Neos.Neos:ContentElementWrapping
 }
 
 # Attach to `PrimaryContent` to render nodes of this time automatically
