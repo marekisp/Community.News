@@ -23,7 +23,7 @@ prototype(Community.News:News) {
 //        }
 //    }
 
-    @process.editableWrap = Neos.Neos:ContentElementWrapping
+     @process.editableWrap = Neos.Neos:ContentElementWrapping
 }
 
 # Attach to `PrimaryContent` to render nodes of this time automatically
