@@ -3,9 +3,12 @@ prototype(Community.News:News.Short) < prototype(Neos.Neos:Content) {
     templatePath = 'resource://Community.News/Private/Templates/NodeTypes/NewsShort.html'
     sectionName = 'newsShort'
 
+
     # We have to manually set all needed node properties as Fluid template variables
     publishDate = ${q(node).property('publishDate')}
     title = ${q(node).property('title')}
     teaser = ${q(node).property('teaser')}
     author = ${q(node).property('author')}
+
+
 }
