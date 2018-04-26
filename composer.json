@@ -4,7 +4,7 @@
     "description": "Base News package built on top of Flowpack.Listable",
     "require": {
         "neos/neos": "~3.3",
-        "flowpack/listable": "~1.0"
+        "flowpack/listable": "dev-master"
     },
     "autoload": {
         "psr-4": {
