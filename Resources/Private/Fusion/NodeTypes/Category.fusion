@@ -9,13 +9,27 @@ prototype(Community.News:Category) {
     }
 
     # Fetch and render all news articles that belong to the current category
+    #newsByCategory = Community.News:AbstractList {
+      #  @context.listTitle = 'News with this category'
+      #  prototype(Flowpack.Listable:PaginatedCollection) {
+        #    @context.paginationEnabled = false
+        #    collection = ${q(site).find('[instanceof Community.News:News]').filterByReference('categories', node).get()}
+      #  }
+   #newsByCategory = Community.News:AbstractList {
+        #@context.listTitle = 'News with this category'
+        #collection = ${q(site).find('[instanceof Community.News:News]').filterByReference('categories', node).get()}
+          #  }
+
+
     newsByCategory = Community.News:AbstractList {
-        @context.listTitle = 'News with this category'
-        prototype(Flowpack.Listable:PaginatedCollection) {
-            @context.paginationEnabled = false
-            collection = ${q(site).find('[instanceof Community.News:News]').filterByReference('categories', node).get()}
-        }
+      collection = ${q(site).find('[instanceof Community.News:News]').filterByReference('categories', node).get()}
+      collection.@process.sort = ${q(value).count() > 0 ? q(value).sort('publishDate', 'DESC').get() : value}
+      itemsPerPage = 5
     }
+
+   #}
+   # newsdpfCategory = ${q(node).property('title')}
+   newsdpfCategory = ${q(site).find('[instanceof Community.News:News]').filterByReference('categories', node).get()}
 }
 
 # Attach to `PrimaryContent` to render nodes of this type automatically
