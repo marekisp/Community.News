@@ -1,0 +1,13 @@
+prototype(Community.News:AbstractList) < prototype(Flowpack.Listable:PaginatedCollection) {
+  @process.list = Flowpack.Listable:List {
+    @context.listTitle = 'My List'
+    @context.wrapClass = 'listenclass'
+    @cache {
+        mode = 'cached'
+        entryIdentifier.pagination = ${request.pluginArguments.listable-paginate.currentPage}
+        entryTags {
+            1 = ${'NodeType_Community.News:AbstractNews'}
+        }
+    }
+  collection = ${q(site).find('[instanceof Something.Custom:Here]').sort('date', 'DESC').slice(0, 6).get()}
+}
