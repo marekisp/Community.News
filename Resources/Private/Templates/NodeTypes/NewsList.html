@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- <html xmlns="http://www.w3.org/1999/xhtml" lang="en"
+      xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+      xmlns:ts="http://typo3.org/ns/TYPO3/TypoScript/ViewHelpers"
+      xmlns:typo3cr="http://typo3.org/ns/TYPO3/TYPO3CR/ViewHelpers">
+-->
+
+{namespace ts=Neos\Fusion\ViewHelpers}
+{namespace neos=Neos\Neos\ViewHelpers}
+<f:section name="NewsList">
+    <!-- condition for pagination - this is not needed if changes in Configuration/Settings.yaml and this template are made
+         accordingly - this template is set for both cases -->
+
+        <!-- Pagination is not set for this list -->
+            <f:for each="{newsCollection}" as="newsItem">
+                <ts:render path="itemRenderer" context="{node: newsItem}" />
+            </f:for>
+</f:section>
+
+</html>
