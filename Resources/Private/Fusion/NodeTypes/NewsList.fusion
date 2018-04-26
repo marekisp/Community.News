@@ -1,0 +1,10 @@
+prototype(Community.News:NewsList) < prototype(Community.News:AbstractList) {
+  #collection = ${q(site).find('[instanceof Community.News:News]').get()}
+  collection = ${q(site).find('[instanceof Community.News:News]').get() }
+  collection.@process.sort = ${q(value).count() > 0 ? q(value).sort('publishDate', 'DESC').get() : value}
+  itemsPerPage = 6
+  prototype(Flowpack.Listable:Collection) {
+    listClass = 'MyNewsList'
+    itemClass = 'MyNewsListItem'
+  }
+}
