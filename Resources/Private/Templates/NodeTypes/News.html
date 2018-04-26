@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<!--<?xml version="1.0" encoding="UTF-8" ?>-->
 <!-- <html xmlns="http://www.w3.org/1999/xhtml" lang="en"
       xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
       xmlns:neos="http://typo3.org/ns/TYPO3/Neos/ViewHelpers">
@@ -9,14 +9,17 @@
 
 
 <f:section name="newsDetail">
+in News.html
     <!-- News container for the PrimaryContent, attributes/values can be defined in /Resources/Private/TypoScript/Library/NodeTypes/News.ts2 -->
     <div{attributes -> f:format.raw()}>
         <!-- Creation Date -->
         <p><f:format.date date="{publishDate}" format="d.m.Y H:i" /></p>
 
         <!-- News Title -->
-        <h1><neos:contentElement.editable property="title" /></h1>
+        <!--<h1><neos:contentElement.editable property="title" /></h1>-->
 
+
+        <h1><neos:contentElement.editable property="title" /></h1>
         <!-- Teaser -->
         <h3><neos:contentElement.editable property="teaser" /></h3>
 
