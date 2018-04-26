@@ -1,23 +1,25 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!-- <html xmlns="http://www.w3.org/1999/xhtml" lang="en"
       xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
-      xmlns:neos="http://typo3.org/ns/TYPO3/Neos/ViewHelpers">
+      xmlns:neos="http://typo3.org/ns/TYPO3/Neos/ViewHelpers"
+      xmlns:media="http://typo3.org/ns/TYPO3/Media/ViewHelpers">
 -->
-
 {namespace ts=Neos\Fusion\ViewHelpers}
 {namespace neos=Neos\Neos\ViewHelpers}
-
 <f:section name="categoryDetail">
+
     <!-- News container for the PrimaryContent, attributes/values can be defined in /Resources/Private/TypoScript/Library/NodeTypes/Author.ts2 -->
     <div{attributes -> f:format.raw()}>
 
         <!-- Category Name -->
-        <h1><neos:contentElement.editable property="title" /></h1>
+        <!-- <h1><neos:contentElement.editable property="title" /></h1> -->
 
         <!-- Main Content from content collection - created by the editor with elements needed like images, videos, etc. -->
         <f:format.raw value="{main}" />
 
+
         <f:format.raw value="{newsByCategory}" />
+
     </div>
 </f:section>
 
