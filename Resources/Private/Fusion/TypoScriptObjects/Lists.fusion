@@ -1,24 +1,14 @@
-#prototype(Community.News:AbstractList) < prototype(Flowpack.Listable:PaginatedCollection) {
-  #@process.list = Flowpack.Listable:List {
-  #  @context.listTitle = 'My List'
-  #  @context.wrapClass = 'listenclass'
-  #  @cache {
-  #      mode = 'cached'
-  #      entryIdentifier.pagination = ${request.pluginArguments.listable-paginate.currentPage}
-  #      entryTags {
-  #          1 = ${'NodeType_Community.News:AbstractNews'}
-  #      }
-  #  }
-    #itemsPerPage = 5
-    # prototype(Flowpack.Listable:Collection) {
-    #   listClass = 'MyList'
-    #   itemClass = 'MyListItem'
-     #}
-#}
 prototype(Community.News:AbstractList) < prototype(Flowpack.Listable:PaginatedCollection){
   itemsPerPage = 3
   prototype(Flowpack.Listable:Collection) {
     listClass = 'MyList'
     itemClass = 'MyListItem'
+  }
+  @cache {
+      mode = 'cached'
+      entryIdentifier.pagination = ${request.pluginArguments.listable-paginate.currentPage}
+      entryTags {
+          1 = ${'NodeType_Community.News:AbstractNews'}
+      }
   }
 }
