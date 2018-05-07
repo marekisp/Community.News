@@ -1,4 +1,6 @@
-#Community.News Forked for Neos 3.3
+Forked for Neos 3.3
+
+#Community.News
 Node-based news extension for Neos CMS, serving as an example on what your own implementation could look like.
 Dmitri Pisarev (@dimaip), Florian Weiss (@WeissheitenWien), Community Contributors (thank you!)
 
