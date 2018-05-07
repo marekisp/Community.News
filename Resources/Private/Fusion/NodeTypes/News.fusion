@@ -7,7 +7,7 @@ prototype(Community.News:News) {
     main = Neos.Neos:ContentCollection{
         nodePath = 'main'
     }
-
+#dpf categories = Neos.TypoScript:Collection {}
     categories = Neos.Fusion:Collection {
         collection = ${q(node).property('categories')}
         itemName = 'node'
